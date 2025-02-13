@@ -8,6 +8,7 @@ export default function Landing() {
         <NavigationItem
           href='/'
           name='Landing'
+          active
         />
         <NavigationItem
           href='/docs'
