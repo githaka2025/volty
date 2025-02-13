@@ -6,4 +6,5 @@
   justify-content: flex-start;
   gap: 64px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: white;
 }
