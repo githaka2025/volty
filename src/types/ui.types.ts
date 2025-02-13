@@ -1,7 +1,15 @@
 import { Interface } from 'node:readline';
+import { ReactNode } from 'react';
 
 export namespace UI {
-  export namespace Layout {}
+  export namespace Layout {
+    // Navigation
+    export namespace Navigation {
+      export interface Props {
+        children: ReactNode;
+      }
+    }
+  }
 
   export namespace Shared {
     // Icon
