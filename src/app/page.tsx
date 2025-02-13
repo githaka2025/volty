@@ -1,5 +1,5 @@
 import { Header, Main } from '@layoutUI';
-import { NavigationItem } from '@sharedUI';
+import { Button, NavigationItem } from '@sharedUI';
 
 export default function Landing() {
   return (
@@ -13,6 +13,10 @@ export default function Landing() {
         <NavigationItem
           href='/docs'
           name='Docs'
+        />
+        <Button
+          href='/login'
+          name='Account'
         />
       </Header>
       <Main />
