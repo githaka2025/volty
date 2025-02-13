@@ -31,6 +31,7 @@
       "@middleware": ["./src/exports/middleware.ts"],
       "@handlers": ["./src/exports/handlers.ts"],
       "@utils": ["./src/exports/utils.ts"],
+      "@types": ["./src/exports/types.ts"],
       "@/*": ["./src/*"]
     }
   },
