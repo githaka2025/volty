@@ -1,4 +1,5 @@
 import { DialogStyles } from '@layoutStyles';
+import { Footer } from '@layoutUI';
 import { Icon } from '@sharedUI';
 
 export default function Dialog() {
@@ -23,6 +24,7 @@ export default function Dialog() {
           quisquam quo? Excepturi.
         </p>
       </div>
+      <Footer />
     </dialog>
   );
 }
