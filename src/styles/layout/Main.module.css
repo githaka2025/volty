@@ -1,0 +1,9 @@
+.Main {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  height: calc(
+    100vh - 73px
+  ); /* Considers 72px header height and possible 1px border bottom */
+}
