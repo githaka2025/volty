@@ -30,7 +30,17 @@
     flex-grow: 1;
   }
 
+  @keyframes slideFromTop {
+    from {
+      transform: translateY(-100%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+
   .Body {
+    animation: slideFromTop 0.5s ease-out forwards;
     position: absolute;
     top: 73px;
     height: calc(100vh - 73px - 64px);
