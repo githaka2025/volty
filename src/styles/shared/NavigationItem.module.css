@@ -1,0 +1,7 @@
+.NavigationItem {
+  text-decoration: none;
+}
+
+.NavigationItem:hover {
+  text-decoration: underline;
+}
