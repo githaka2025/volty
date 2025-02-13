@@ -3,10 +3,13 @@ import { Icon } from '@sharedUI';
 
 export default function Dialog() {
   return (
-    <dialog className={DialogStyles.Dialog}>
+    <dialog
+      className={[DialogStyles.Dialog, 'layout'].join(' ')}
+      open
+    >
       <div className={DialogStyles.Head}>
         <Icon
-          name=''
+          name='cancel.svg'
           alt=''
           width={24}
           height={24}
