@@ -1,4 +1,3 @@
-import { Interface } from 'node:readline';
 import { ReactNode } from 'react';
 
 export namespace UI {
@@ -26,6 +25,14 @@ export namespace UI {
     // Brand
     export namespace Brand {
       export interface Props {
+        name: string;
+      }
+    }
+
+    // NavigationItem
+    export namespace NavigationItem {
+      export interface Props {
+        href: string;
         name: string;
       }
     }
