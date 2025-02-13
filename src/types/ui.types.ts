@@ -8,6 +8,13 @@ export namespace UI {
         children: ReactNode;
       }
     }
+
+    // Header
+    export namespace Header {
+      export interface Props {
+        children: ReactNode;
+      }
+    }
   }
 
   export namespace Shared {
