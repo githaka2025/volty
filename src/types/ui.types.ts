@@ -41,6 +41,7 @@ export namespace UI {
       export interface Props {
         href: string;
         name: string;
+        active?: boolean;
       }
     }
   }

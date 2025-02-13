@@ -5,11 +5,16 @@ import Link from 'next/link';
 export default function NavigationItem({
   href,
   name,
+  active,
 }: UI.Shared.NavigationItem.Props) {
   return (
     <Link
       href={href}
-      className={NavigationItemStyles.NavigationItem}
+      className={
+        active
+          ? NavigationItemStyles.Active
+          : NavigationItemStyles.NavigationItem
+      }
     >
       {name}
     </Link>
