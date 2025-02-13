@@ -8,7 +8,7 @@ export default function Icon({
   width,
   height,
   styles,
-}: UI.Shared.IconProps) {
+}: UI.Shared.Icon.Props) {
   return (
     <Image
       src={`/icons/dark/${name}`}
