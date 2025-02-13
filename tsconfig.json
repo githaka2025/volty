@@ -19,6 +19,18 @@
       }
     ],
     "paths": {
+      "@layoutUI": ["./src/exports/ui/layout.ts"],
+      "@sharedUI": ["./src/exports/ui/shared.ts"],
+      "@viewsUI": ["./src/exports/ui/views.ts"],
+      "@layoutStyles": ["./src/exports/styles/layout.ts"],
+      "@sharedStyles": ["./src/exports/styles/shared.ts"],
+      "@viewsStyles": ["./src/exports/styles/views.ts"],
+      "@staticFonts": ["./src/exports/fonts/static.ts"],
+      "@dynamicFonts": ["./src/exports/fonts/dynamic.ts"],
+      "@hooks": ["./src/exports/hooks.ts"],
+      "@middleware": ["./src/exports/middleware.ts"],
+      "@handlers": ["./src/exports/handlers.ts"],
+      "@utils": ["./src/exports/utils.ts"],
       "@/*": ["./src/*"]
     }
   },
