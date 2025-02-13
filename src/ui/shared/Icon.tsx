@@ -7,6 +7,7 @@ export default function Icon({
   alt,
   width,
   height,
+  styles,
 }: UI.Shared.IconProps) {
   return (
     <Image
@@ -14,7 +15,7 @@ export default function Icon({
       alt={alt}
       width={width}
       height={height}
-      className={IconStyles.Icon}
+      className={[IconStyles.Icon, styles].join(' ')}
     />
   );
 }

@@ -7,6 +7,7 @@ export namespace UI {
       alt: string;
       width: number;
       height: number;
+      styles?: string;
     }
   }
 
