@@ -1,0 +1,25 @@
+import { DialogStyles } from '@layoutStyles';
+import { Icon } from '@sharedUI';
+
+export default function Dialog() {
+  return (
+    <dialog className={DialogStyles.Dialog}>
+      <div className={DialogStyles.Head}>
+        <Icon
+          name=''
+          alt=''
+          width={24}
+          height={24}
+        />
+      </div>
+      <div className={DialogStyles.Body}>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni sed
+          vitae quibusdam suscipit accusamus dicta! Ex, cupiditate, tempora,
+          totam velit recusandae quam ut fugit autem perspiciatis repellendus
+          quisquam quo? Excepturi.
+        </p>
+      </div>
+    </dialog>
+  );
+}
