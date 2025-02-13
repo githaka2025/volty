@@ -1,4 +1,5 @@
 import '@/styles/globals.css';
+import { workSans } from '@dynamicFonts';
 
 export default function RootLayout({
   children,
@@ -7,7 +8,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body>{children}</body>
+      <body className={workSans.className}>{children}</body>
     </html>
   );
 }
