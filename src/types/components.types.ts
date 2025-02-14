@@ -96,6 +96,13 @@ export namespace Components {
         method?: (event: React.FormEvent) => void;
       }
     }
+
+    // Message
+    export namespace Message {
+      export interface Props {
+        message: string;
+      }
+    }
   }
 
   export namespace Views {
