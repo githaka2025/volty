@@ -14,7 +14,7 @@ export default function PageNotFound() {
       <Logo />
       <div className={PageNotFoundStyles.Body}>
         <h1>404 - Page Not Found</h1>
-        <p>{pathname}</p>
+        <p className={PageNotFoundStyles.Path}>{pathname}</p>
         <p>The requested URL could not be located on this server.</p>
         <Button
           href=''
