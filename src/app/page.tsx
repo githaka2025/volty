@@ -1,5 +1,5 @@
-import { Header, Main } from '@layoutUI';
-import { Button, NavigationItem } from '@sharedUI';
+import { Header, Main } from '@layoutComponents';
+import { Button, NavigationItem } from '@sharedComponents';
 
 export default function Landing() {
   return (

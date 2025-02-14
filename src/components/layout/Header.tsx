@@ -1,6 +1,6 @@
 import { HeaderStyles } from '@layoutStyles';
-import { Navigation } from '@layoutUI';
-import { Brand } from '@sharedUI';
+import { Navigation } from '@layoutComponents';
+import { Brand } from '@sharedComponents';
 import { UI } from '@types';
 
 export default function Header({ children }: UI.Layout.Header.Props) {

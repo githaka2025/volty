@@ -1,5 +1,5 @@
 import { BrandStyles } from '@sharedStyles';
-import { Logo } from '@sharedUI';
+import { Logo } from '@sharedComponents';
 import { UI } from '@types';
 
 export default function Brand({ name }: UI.Shared.Brand.Props) {

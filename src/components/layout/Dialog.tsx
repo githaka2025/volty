@@ -1,6 +1,6 @@
 import { DialogStyles } from '@layoutStyles';
-import { Footer } from '@layoutUI';
-import { Icon } from '@sharedUI';
+import { Footer } from '@layoutComponents';
+import { Icon } from '@sharedComponents';
 
 export default function Dialog() {
   return (

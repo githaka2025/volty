@@ -1,5 +1,5 @@
 import { LogoStyles } from '@sharedStyles';
-import { Icon } from '@sharedUI';
+import { Icon } from '@sharedComponents';
 
 export default function Logo() {
   return (

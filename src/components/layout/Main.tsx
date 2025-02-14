@@ -1,5 +1,5 @@
 import { MainStyles } from '@layoutStyles';
-import { Container, Footer } from '@layoutUI';
+import { Container, Footer } from '@layoutComponents';
 
 export default function Main() {
   return (

@@ -1,7 +1,7 @@
 'use client';
 import { useToggle } from '@hooks';
 import { NavigationStyles } from '@layoutStyles';
-import { Icon } from '@sharedUI';
+import { Icon } from '@sharedComponents';
 import { UI } from '@types';
 
 export default function Navigation({ children }: UI.Layout.Navigation.Props) {

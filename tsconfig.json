@@ -19,9 +19,9 @@
       }
     ],
     "paths": {
-      "@layoutUI": ["./src/exports/ui/layout.ts"],
-      "@sharedUI": ["./src/exports/ui/shared.ts"],
-      "@viewsUI": ["./src/exports/ui/views.ts"],
+      "@layoutComponents": ["./src/exports/components/layout.ts"],
+      "@sharedComponents": ["./src/exports/components/shared.ts"],
+      "@viewsComponents": ["./src/exports/components/views.ts"],
       "@layoutStyles": ["./src/exports/styles/layout.ts"],
       "@sharedStyles": ["./src/exports/styles/shared.ts"],
       "@viewsStyles": ["./src/exports/styles/views.ts"],
