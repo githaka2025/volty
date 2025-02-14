@@ -15,6 +15,15 @@ export namespace Components {
         children: ReactNode;
       }
     }
+
+    // View
+    export namespace View {
+      export interface Props {
+        children: ReactNode;
+        id: string;
+        styles?: string;
+      }
+    }
   }
 
   export namespace Shared {
