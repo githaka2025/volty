@@ -1,3 +1,4 @@
+import { workSans } from '@dynamicFonts';
 import { InputStyles } from '@sharedStyles';
 import { Components } from '@types';
 
@@ -16,6 +17,7 @@ export default function Input({
         type={type}
         placeholder={placeholder}
         value={value}
+        className={workSans.className}
       />
     </div>
   );
