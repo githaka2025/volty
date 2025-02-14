@@ -63,6 +63,13 @@ export namespace Components {
         value?: string;
       }
     }
+
+    // Form
+    export namespace Form {
+      export interface Props {
+        children: ReactNode;
+      }
+    }
   }
 
   namespace Views {}
