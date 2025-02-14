@@ -62,6 +62,22 @@ export default function Authentication({
           />
         </Form>
       )}
+
+      {/* Reset */}
+      {type === 'Reset' && (
+        <Form>
+          <Input
+            type='email'
+            id='email'
+            label='Email'
+            placeholder='your@email.com'
+          />
+          <Input
+            type='submit'
+            value={type}
+          />
+        </Form>
+      )}
     </View>
   );
 }
