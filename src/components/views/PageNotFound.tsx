@@ -2,10 +2,11 @@
 import { View } from '@layoutComponents';
 import { Button, Logo } from '@sharedComponents';
 import { PageNotFoundStyles } from '@viewsStyles';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 
 export default function PageNotFound() {
   const pathname = usePathname();
+  const router = useRouter();
   return (
     <View
       id='error-404'
@@ -18,6 +19,7 @@ export default function PageNotFound() {
         <p>The requested URL could not be located on this server.</p>
         <Button
           href=''
+          method={() => router.back()}
           name='Back'
         />
       </div>
