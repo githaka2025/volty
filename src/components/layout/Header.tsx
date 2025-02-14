@@ -1,9 +1,9 @@
 import { HeaderStyles } from '@layoutStyles';
 import { Navigation } from '@layoutComponents';
 import { Brand } from '@sharedComponents';
-import { UI } from '@types';
+import { Components } from '@types';
 
-export default function Header({ children }: UI.Layout.Header.Props) {
+export default function Header({ children }: Components.Layout.Header.Props) {
   return (
     <header className={[HeaderStyles.Header, 'layout'].join(' ')}>
       <Brand name='Volty' />

@@ -2,9 +2,11 @@
 import { useToggle } from '@hooks';
 import { NavigationStyles } from '@layoutStyles';
 import { Icon } from '@sharedComponents';
-import { UI } from '@types';
+import { Components } from '@types';
 
-export default function Navigation({ children }: UI.Layout.Navigation.Props) {
+export default function Navigation({
+  children,
+}: Components.Layout.Navigation.Props) {
   const { state, toggleState } = useToggle();
   return (
     <nav className={NavigationStyles.Navigation}>

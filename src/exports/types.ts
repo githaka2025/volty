@@ -1,1 +1,1 @@
-export * from '@/types/ui.types';
+export * from '@/types/components.types';

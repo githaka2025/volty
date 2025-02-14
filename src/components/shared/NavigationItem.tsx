@@ -1,12 +1,12 @@
 import { NavigationItemStyles } from '@sharedStyles';
-import { UI } from '@types';
+import { Components } from '@types';
 import Link from 'next/link';
 
 export default function NavigationItem({
   href,
   name,
   active,
-}: UI.Shared.NavigationItem.Props) {
+}: Components.Shared.NavigationItem.Props) {
   return (
     <Link
       href={href}

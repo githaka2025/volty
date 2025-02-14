@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 
-export namespace UI {
+export namespace Components {
   export namespace Layout {
     // Navigation
     export namespace Navigation {

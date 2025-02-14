@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { UI } from '@types';
+import { Components } from '@types';
 import { IconStyles } from '@sharedStyles';
 
 export default function Icon({
@@ -8,7 +8,7 @@ export default function Icon({
   width,
   height,
   styles,
-}: UI.Shared.Icon.Props) {
+}: Components.Shared.Icon.Props) {
   return (
     <Image
       src={`/icons/dark/${name}`}

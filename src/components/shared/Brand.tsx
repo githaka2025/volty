@@ -1,8 +1,8 @@
 import { BrandStyles } from '@sharedStyles';
 import { Logo } from '@sharedComponents';
-import { UI } from '@types';
+import { Components } from '@types';
 
-export default function Brand({ name }: UI.Shared.Brand.Props) {
+export default function Brand({ name }: Components.Shared.Brand.Props) {
   return (
     <div className={BrandStyles.Brand}>
       <Logo />
