@@ -52,6 +52,17 @@ export namespace Components {
         name: string;
       }
     }
+
+    // Input
+    export namespace Input {
+      export interface Props {
+        id?: string;
+        label?: string;
+        type: string;
+        placeholder?: string;
+        value?: string;
+      }
+    }
   }
 
   namespace Views {}
