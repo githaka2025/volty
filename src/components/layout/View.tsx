@@ -8,7 +8,7 @@ export default function View({
 }: Components.Layout.View.Props) {
   return (
     <section
-      id={id}
+      id={id.toLowerCase()}
       className={[ViewStyles.View, styles].join(' ')}
     >
       {children}
