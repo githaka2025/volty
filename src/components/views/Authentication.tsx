@@ -1,3 +1,4 @@
+'use client';
 import { View } from '@layoutComponents';
 import { Form, Input, Logo } from '@sharedComponents';
 import { Components } from '@types';
@@ -18,18 +19,30 @@ export default function Authentication({
 
       {/* Login */}
       {type === 'Login' && (
-        <Form>
+        <Form method={authentication}>
           <Input
             type='email'
             id='email'
             label='Email'
             placeholder='your@email.com'
+            method={(event) =>
+              setFields({
+                ...fields,
+                email: (event.target as HTMLInputElement).value,
+              })
+            }
           />
           <Input
             type='password'
             id='password'
             label='Password'
             placeholder='********'
+            method={(event) =>
+              setFields({
+                ...fields,
+                password: (event.target as HTMLInputElement).value,
+              })
+            }
           />
           <Input
             type='submit'
@@ -46,18 +59,36 @@ export default function Authentication({
             id='email'
             label='Email'
             placeholder='your@email.com'
+            method={(event) =>
+              setFields({
+                ...fields,
+                email: (event.target as HTMLInputElement).value,
+              })
+            }
           />
           <Input
             type='password'
             id='password'
             label='Password'
             placeholder='********'
+            method={(event) =>
+              setFields({
+                ...fields,
+                password: (event.target as HTMLInputElement).value,
+              })
+            }
           />
           <Input
             type='password'
             id='confirmPassword'
             label='Confirm Password'
             placeholder='********'
+            method={(event) =>
+              setFields({
+                ...fields,
+                confirm_password: (event.target as HTMLInputElement).value,
+              })
+            }
           />
           <Input
             type='submit'
@@ -74,6 +105,12 @@ export default function Authentication({
             id='email'
             label='Email'
             placeholder='your@email.com'
+            method={(event) =>
+              setFields({
+                ...fields,
+                email: (event.target as HTMLInputElement).value,
+              })
+            }
           />
           <Input
             type='submit'
