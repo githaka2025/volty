@@ -7,11 +7,6 @@ export default function NotFound() {
     <>
       <Header>
         <NavigationItem
-          href='/'
-          name='404'
-          active
-        />
-        <NavigationItem
           href='/docs'
           name='Docs'
         />
