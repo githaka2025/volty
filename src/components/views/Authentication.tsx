@@ -1,6 +1,6 @@
 'use client';
 import { View } from '@layoutComponents';
-import { Form, Input, Logo } from '@sharedComponents';
+import { Form, Input, Logo, Message } from '@sharedComponents';
 import { Components } from '@types';
 import { AuthenticationStyles } from '@viewsStyles';
 import { useAuthentication } from '@hooks';
@@ -16,6 +16,13 @@ export default function Authentication({
       styles={AuthenticationStyles.Authentication}
     >
       <Logo />
+
+      {!message?.success && message?.error && (
+        <Message
+          type='Error'
+          message={message.error.message}
+        />
+      )}
 
       {/* Login */}
       {type === 'Login' && (

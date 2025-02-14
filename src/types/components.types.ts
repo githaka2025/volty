@@ -101,6 +101,7 @@ export namespace Components {
     export namespace Message {
       export interface Props {
         message: string;
+        type: 'Error' | 'Success';
       }
     }
   }
