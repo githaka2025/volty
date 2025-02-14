@@ -14,12 +14,12 @@ export default function PageNotFound() {
         <p>
           The requested URL could not be located on this server. This may be due
           to one of the following reasons:
-          <li>
-            <ol>The page has been moved or deleted.</ol>
-            <ol>The URL was entered incorrectly.</ol>
-            <ol>A broken link is referencing a non-existent resource.</ol>
-          </li>
         </p>
+        <ol>
+          <li>The page has been moved or deleted.</li>
+          <li>The URL was entered incorrectly.</li>
+          <li>A broken link is referencing a non-existent resource.</li>
+        </ol>
         <Button
           href=''
           name='Back'
