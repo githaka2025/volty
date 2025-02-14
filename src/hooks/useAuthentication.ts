@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { Hooks } from '@types';
 
-export default function useAuth(type: string) {
+export default function useAuthentication(type: string) {
   const [message, setMessage] = useState<Hooks.Response>();
   const [endpoint, setEndpoint] = useState<string>('');
   const [redirectPath, setRedirectPath] = useState<string>('/');
@@ -34,7 +34,7 @@ export default function useAuth(type: string) {
     }
   }, [type]);
 
-  const auth = async (event: React.FormEvent) => {
+  const authentication = async (event: React.FormEvent) => {
     event.preventDefault();
 
     try {
@@ -52,7 +52,7 @@ export default function useAuth(type: string) {
         setMessage({
           success: false,
           error: {
-            origin: 'useAuth',
+            origin: 'useAuthentication',
             message: feedback.error.message,
           },
         });
@@ -63,12 +63,12 @@ export default function useAuth(type: string) {
       setMessage({
         success: false,
         error: {
-          origin: 'useAuth',
+          origin: 'useAuthentication',
           message: `Unable to access /api/authentication/${endpoint}.`,
         },
       });
     }
   };
 
-  return { message, auth, fields, setFields };
+  return { message, authentication, fields, setFields };
 }

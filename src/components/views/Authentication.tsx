@@ -2,10 +2,13 @@ import { View } from '@layoutComponents';
 import { Form, Input, Logo } from '@sharedComponents';
 import { Components } from '@types';
 import { AuthenticationStyles } from '@viewsStyles';
+import { useAuthentication } from '@hooks';
 
 export default function Authentication({
   type,
 }: Components.Views.Authentication.Props) {
+  const { message, authentication, fields, setFields } =
+    useAuthentication(type);
   return (
     <View
       id={type}
