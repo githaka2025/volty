@@ -24,6 +24,20 @@ export namespace Components {
         styles?: string;
       }
     }
+
+    // Main
+    export namespace Main {
+      export interface Props {
+        children: ReactNode;
+      }
+    }
+
+    // Container
+    export namespace Container {
+      export interface Props {
+        children: ReactNode;
+      }
+    }
   }
 
   export namespace Shared {
