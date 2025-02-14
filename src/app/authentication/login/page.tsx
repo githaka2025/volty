@@ -1,5 +1,6 @@
 import { Header, Main } from '@layoutComponents';
 import { Button, NavigationItem } from '@sharedComponents';
+import { Authentication } from '@viewsComponents';
 
 export default function Login() {
   return (
@@ -23,7 +24,9 @@ export default function Login() {
           name='Landing'
         />
       </Header>
-      <Main />
+      <Main>
+        <Authentication type='Login' />
+      </Main>
     </>
   );
 }
