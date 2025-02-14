@@ -81,5 +81,12 @@ export namespace Components {
     }
   }
 
-  namespace Views {}
+  export namespace Views {
+    // Authentication
+    export namespace Authentication {
+      export interface Props {
+        type: 'Login' | 'Register' | 'Reset';
+      }
+    }
+  }
 }
