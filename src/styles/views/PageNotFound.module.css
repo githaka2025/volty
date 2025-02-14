@@ -22,3 +22,9 @@
   justify-content: center;
   gap: 32px;
 }
+
+.Path {
+  background-color: rgba(255, 0, 0, 0.1);
+  padding: 8px;
+  border-radius: 10px;
+}
