@@ -1,4 +1,4 @@
-import { Dialog, Header, Main } from '@layoutUI';
+import { Header, Main } from '@layoutUI';
 import { Button, NavigationItem } from '@sharedUI';
 
 export default function Landing() {
@@ -19,7 +19,6 @@ export default function Landing() {
           name='Account'
         />
       </Header>
-      <Dialog />
       <Main />
     </>
   );
