@@ -68,11 +68,12 @@ export namespace Components {
       }
     }
 
-    // NavigationItem
+    // Button
     export namespace Button {
       export interface Props {
         href: string;
         name: string;
+        method?: () => void;
       }
     }
 
