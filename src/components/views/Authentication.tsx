@@ -1,5 +1,5 @@
 import { View } from '@layoutComponents';
-import { Form, Input } from '@sharedComponents';
+import { Form, Input, Logo } from '@sharedComponents';
 import { Components } from '@types';
 import { AuthenticationStyles } from '@viewsStyles';
 
@@ -11,6 +11,7 @@ export default function Authentication({
       id={type}
       styles={AuthenticationStyles.Authentication}
     >
+      <Logo />
       {type === 'Login' && (
         <Form>
           <Input
