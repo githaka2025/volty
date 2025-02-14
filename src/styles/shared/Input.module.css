@@ -1,0 +1,37 @@
+.Input {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.Input label {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.Input input {
+  padding: 12px;
+  border-radius: 14px;
+  border: 1px solid black;
+}
+
+.Input input:hover {
+  outline: 2px solid black;
+}
+
+.Input input[type='submit'] {
+  background-color: black;
+  color: white;
+  text-decoration: none;
+  padding: 8px;
+  font-weight: 500;
+  border-radius: 10px;
+  border: none;
+}
+
+.Input input[type='submit']:hover {
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
