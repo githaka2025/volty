@@ -12,6 +12,8 @@ export default function Authentication({
       styles={AuthenticationStyles.Authentication}
     >
       <Logo />
+
+      {/* Login */}
       {type === 'Login' && (
         <Form>
           <Input
@@ -24,6 +26,34 @@ export default function Authentication({
             type='password'
             id='password'
             label='Password'
+            placeholder='********'
+          />
+          <Input
+            type='submit'
+            value={type}
+          />
+        </Form>
+      )}
+
+      {/* Register */}
+      {type === 'Register' && (
+        <Form>
+          <Input
+            type='email'
+            id='email'
+            label='Email'
+            placeholder='your@email.com'
+          />
+          <Input
+            type='password'
+            id='password'
+            label='Password'
+            placeholder='********'
+          />
+          <Input
+            type='password'
+            id='confirmPassword'
+            label='Confirm Password'
             placeholder='********'
           />
           <Input
