@@ -1,0 +1,24 @@
+.PageNotFound {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  gap: 64px;
+}
+
+.PageNotFound h1 {
+  font-size: 24px;
+}
+
+.PageNotFound p {
+  text-align: center;
+}
+
+.PageNotFound .Body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+}
