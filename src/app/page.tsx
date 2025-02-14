@@ -15,11 +15,13 @@ export default function Landing() {
           name='Docs'
         />
         <Button
-          href='/login'
+          href='/authentication/login'
           name='Account'
         />
       </Header>
-      <Main />
+      <Main>
+        <></>
+      </Main>
     </>
   );
 }
