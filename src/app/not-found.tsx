@@ -1,5 +1,6 @@
 import { Header, Main } from '@layoutComponents';
 import { Button, NavigationItem } from '@sharedComponents';
+import { PageNotFound } from '@viewsComponents';
 
 export default function NotFound() {
   return (
@@ -20,7 +21,7 @@ export default function NotFound() {
         />
       </Header>
       <Main>
-        <></>
+        <PageNotFound />
       </Main>
     </>
   );
