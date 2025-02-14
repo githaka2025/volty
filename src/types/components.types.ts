@@ -85,6 +85,7 @@ export namespace Components {
         type: string;
         placeholder?: string;
         value?: string;
+        method?: (event: React.FormEvent) => void;
       }
     }
 
@@ -92,6 +93,7 @@ export namespace Components {
     export namespace Form {
       export interface Props {
         children: ReactNode;
+        method?: (event: React.FormEvent) => void;
       }
     }
   }
