@@ -1,21 +1,33 @@
 import { Handlers } from '@types';
 import { NextRequest, NextResponse } from 'next/server';
-import { verifyRegister, verifyEmail } from '@handlers';
+import { verifyRegister, verifyEmail, registerUser } from '@handlers';
 
 export async function POST(request: NextRequest) {
   try {
     const { email, password, confirmPassword } = await request.json();
 
-    const isRegisterOkay = verifyRegister({ email, password, confirmPassword });
-    if (!isRegisterOkay.success) {
-      return NextResponse.json(isRegisterOkay, {
+    const isVerifyRegisterOkay = verifyRegister({
+      email,
+      password,
+      confirmPassword,
+    });
+    if (!isVerifyRegisterOkay.success) {
+      return NextResponse.json(isVerifyRegisterOkay, {
         status: 400,
       });
     }
 
-    const isEmailOkay = await verifyEmail(email);
-    if (!isEmailOkay.success) {
-      return NextResponse.json(isEmailOkay, { status: 400 });
+    const isVerifyEmailOkay = await verifyEmail(email);
+    if (!isVerifyEmailOkay.success) {
+      return NextResponse.json(isVerifyEmailOkay, { status: 400 });
+    }
+
+    const isRegisterUserOkay = await registerUser({
+      email,
+      password,
+    } as Handlers.RegisterFields);
+    if (!isRegisterUserOkay.success) {
+      return NextResponse.json(isRegisterUserOkay, { status: 400 });
     }
   } catch {
     return Response.json(
