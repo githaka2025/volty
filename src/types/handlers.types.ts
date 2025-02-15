@@ -8,6 +8,7 @@ export namespace Handlers {
     };
     data?: {
       userId?: string;
+      sessionId?: string;
     };
   }
 
