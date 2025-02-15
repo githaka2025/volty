@@ -19,12 +19,12 @@ export default function useAuthentication(type: string) {
       case 'Register':
         setEndpoint('register');
         setFields({ email: '', password: '', confirm_password: '' });
-        setRedirectPath('/login');
+        setRedirectPath('/authentication/login');
         break;
       case 'Reset':
         setEndpoint('reset');
         setFields({ email: '' });
-        setRedirectPath('/login');
+        setRedirectPath('/authentication/login');
         break;
       default:
         setEndpoint('');
