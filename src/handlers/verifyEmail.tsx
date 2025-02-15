@@ -1,9 +1,9 @@
 import { Handlers } from '@types';
 import { accessPostgreSQL } from '@utils';
 
-export default async function verifyEmail({
-  email,
-}: Handlers.RegisterFields): Promise<Handlers.Response> {
+export default async function verifyEmail(
+  email: string
+): Promise<Handlers.Response> {
   if (!email) {
     return {
       success: false,
@@ -15,9 +15,10 @@ export default async function verifyEmail({
     };
   }
 
-  const client = await accessPostgreSQL.connect();
+  let client;
 
   try {
+    client = await accessPostgreSQL.connect();
     const query = {
       name: 'verifyEmail',
       text: 'SELECT * FROM users WHERE email = $1',
@@ -45,6 +46,8 @@ export default async function verifyEmail({
       },
     };
   } finally {
-    client.release();
+    if (client) {
+      client.release();
+    }
   }
 }
