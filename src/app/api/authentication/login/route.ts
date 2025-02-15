@@ -1,6 +1,6 @@
 import { Handlers } from '@types';
 import { NextRequest, NextResponse } from 'next/server';
-import { loginUser, verifyLogin } from '@handlers';
+import { createSession, loginUser, verifyLogin } from '@handlers';
 
 export async function POST(request: NextRequest) {
   try {
@@ -19,6 +19,18 @@ export async function POST(request: NextRequest) {
     } as Handlers.LoginFields);
     if (!isLoginUserOkay.success) {
       return NextResponse.json(isLoginUserOkay, {
+        status: 400,
+      });
+    }
+
+    let userId;
+    if (isLoginUserOkay.success) {
+      userId = isLoginUserOkay.data?.userId;
+    }
+
+    const isCreateSessionOkay = await createSession(userId as string);
+    if (!isCreateSessionOkay.success) {
+      return NextResponse.json(isCreateSessionOkay, {
         status: 400,
       });
     }
