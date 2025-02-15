@@ -13,7 +13,7 @@ export namespace Hooks {
     export interface Fields {
       email?: string;
       password?: string;
-      confirm_password?: string;
+      confirmPassword?: string;
     }
   }
 }

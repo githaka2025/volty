@@ -18,7 +18,7 @@ export default function useAuthentication(type: string) {
         break;
       case 'Register':
         setEndpoint('register');
-        setFields({ email: '', password: '', confirm_password: '' });
+        setFields({ email: '', password: '', confirmPassword: '' });
         setRedirectPath('/authentication/login');
         break;
       case 'Reset':

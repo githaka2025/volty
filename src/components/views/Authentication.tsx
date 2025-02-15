@@ -93,7 +93,7 @@ export default function Authentication({
             method={(event) =>
               setFields({
                 ...fields,
-                confirm_password: (event.target as HTMLInputElement).value,
+                confirmPassword: (event.target as HTMLInputElement).value,
               })
             }
           />
