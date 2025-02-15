@@ -1,11 +1,10 @@
 import { Handlers } from '@types';
-import { accessPostgreSQL, generateHash, validateHash } from '@utils';
-import { console } from 'inspector';
+import { accessPostgreSQL, validateHash } from '@utils';
 
 export default async function loginUser({
   email,
   password,
-}: Handlers.RegisterFields): Promise<Handlers.Response> {
+}: Handlers.LoginFields): Promise<Handlers.Response> {
   if (!email || !password) {
     return {
       success: false,
