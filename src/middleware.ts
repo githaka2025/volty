@@ -1,14 +1,21 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
-import { verifyLogin } from '@middleware';
+import { verifyLogin, verifyRegister } from '@middleware';
 
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
   if (pathname === '/api/authentication/login') {
-    const loginValidationResponse = await verifyLogin(request);
-    if (loginValidationResponse) {
-      return loginValidationResponse;
+    const isLoginOk = await verifyLogin(request);
+    if (isLoginOk) {
+      return isLoginOk;
+    }
+  }
+
+  if (pathname === '/api/authentication/register') {
+    const isRegistrationOk = await verifyRegister(request);
+    if (isRegistrationOk) {
+      return isRegistrationOk;
     }
   }
 
@@ -16,5 +23,5 @@ export async function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/api/authentication/login'],
+  matcher: ['/api/authentication/login', '/api/authentication/register'],
 };
