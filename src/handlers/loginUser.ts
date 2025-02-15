@@ -22,7 +22,7 @@ export default async function loginUser({
     client = await accessPostgreSQL.connect();
     const query = {
       name: 'loginUser',
-      text: 'SELECT id FROM users WHERE email = $1',
+      text: 'SELECT * FROM users WHERE email = $1',
       values: [email],
     };
     const result = await client.query(query);
@@ -39,6 +39,7 @@ export default async function loginUser({
 
     const hash = result.rows[0].hash;
     const isPasswordOkay = await validateHash(password, hash);
+
     if (!isPasswordOkay) {
       return {
         success: false,
@@ -50,13 +51,14 @@ export default async function loginUser({
       };
     }
     return { success: true };
-  } catch {
+  } catch (error) {
+    console.error(error);
     return {
       success: false,
       error: {
         type: 'handlers',
         origin: 'loginUser',
-        message: 'Registration failed.',
+        message: 'Login failed.',
       },
     };
   } finally {
