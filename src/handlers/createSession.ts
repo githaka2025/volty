@@ -1,5 +1,5 @@
 import { Handlers } from '@types';
-import { accessPostgreSQL, validateHash } from '@utils';
+import { accessPostgreSQL } from '@utils';
 
 export default async function createSession(
   userId: string
@@ -19,13 +19,31 @@ export default async function createSession(
 
   try {
     client = await accessPostgreSQL.connect();
-    const query = {
+    await client.query('BEGIN');
+
+    const checkQuery = {
+      text: 'SELECT ID FROM SESSIONS WHERE USER_ID = $1',
+      values: [userId],
+    };
+    const existingSession = await client.query(checkQuery);
+
+    if (existingSession.rows.length > 0) {
+      const deleteQuery = {
+        text: 'DELETE FROM SESSIONS WHERE USER_ID = $1',
+        values: [userId],
+      };
+      await client.query(deleteQuery);
+    }
+
+    const insertQuery = {
       name: 'createSession',
       text: 'INSERT INTO SESSIONS (USER_ID) VALUES ($1) RETURNING *',
       values: [userId],
     };
-    const result = await client.query(query);
+    const result = await client.query(insertQuery);
+
     if (result.rows.length === 0) {
+      await client.query('ROLLBACK');
       return {
         success: false,
         error: {
@@ -36,6 +54,8 @@ export default async function createSession(
       };
     }
 
+    await client.query('COMMIT');
+
     return {
       success: true,
       data: {
@@ -43,7 +63,9 @@ export default async function createSession(
       },
     };
   } catch (error) {
-    console.error(error);
+    if (client) {
+      await client.query('ROLLBACK');
+    }
     return {
       success: false,
       error: {
