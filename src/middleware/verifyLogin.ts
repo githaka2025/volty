@@ -27,5 +27,16 @@ export default async function verifyLogin(request: NextRequest) {
     } as Middleware.Response);
   }
 
+  if (!body.email.endsWith('@gmail.com')) {
+    return NextResponse.json({
+      success: false,
+      error: {
+        type: 'middleware',
+        origin: 'verifyLogin',
+        message: 'Only Gmail email addresses are allowed.',
+      },
+    } as Middleware.Response);
+  }
+
   return null;
 }

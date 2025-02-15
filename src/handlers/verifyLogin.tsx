@@ -26,5 +26,16 @@ export default function verifyLogin({
     } as Handlers.Response;
   }
 
+  if (!email.endsWith('@gmail.com')) {
+    return {
+      success: false,
+      error: {
+        type: 'handlers',
+        origin: 'verifyLogin',
+        message: 'Only Gmail email addresses are allowed.',
+      },
+    } as Handlers.Response;
+  }
+
   return { success: true };
 }
