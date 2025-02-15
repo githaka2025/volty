@@ -1,6 +1,6 @@
 import { Handlers } from '@types';
 import { NextRequest, NextResponse } from 'next/server';
-import { verifyRegister } from '@handlers';
+import { verifyRegister, verifyEmail } from '@handlers';
 
 export async function POST(request: NextRequest) {
   try {
@@ -12,6 +12,11 @@ export async function POST(request: NextRequest) {
         status: 400,
       });
     }
+
+    const isEmailOkay = await verifyEmail(email);
+    if (!isEmailOkay.success) {
+      return NextResponse.json(isEmailOkay, { status: 400 });
+    }
   } catch {
     return Response.json(
       {
@@ -20,7 +25,7 @@ export async function POST(request: NextRequest) {
           type: 'handlers',
           origin: '/api/authentication/register',
           message:
-            'An error occurred while trying to register. Please try again.',
+            'An error occurred while trying to register. Please try again later.',
         },
       } as Handlers.Response,
       {
