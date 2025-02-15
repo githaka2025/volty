@@ -50,7 +50,12 @@ export default async function loginUser({
         },
       };
     }
-    return { success: true };
+    return {
+      success: true,
+      data: {
+        userId: result.rows[0].id,
+      },
+    };
   } catch (error) {
     console.error(error);
     return {

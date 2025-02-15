@@ -6,6 +6,9 @@ export namespace Handlers {
       origin: string;
       message: string;
     };
+    data?: {
+      userId?: string;
+    };
   }
 
   export interface LoginFields {
