@@ -60,7 +60,7 @@ export default function Authentication({
 
       {/* Register */}
       {type === 'Register' && (
-        <Form>
+        <Form method={authentication}>
           <Input
             type='email'
             id='email'
@@ -106,7 +106,7 @@ export default function Authentication({
 
       {/* Reset */}
       {type === 'Reset' && (
-        <Form>
+        <Form method={authentication}>
           <Input
             type='email'
             id='email'
