@@ -12,4 +12,8 @@ export namespace Handlers {
     email: string;
     password: string;
   }
+
+  export interface RegisterFields extends LoginFields {
+    confirmPassword: string;
+  }
 }
