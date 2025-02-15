@@ -1,6 +1,7 @@
 import { Handlers } from '@types';
 import { NextRequest, NextResponse } from 'next/server';
 import { createSession, loginUser, verifyLogin } from '@handlers';
+import { cookies } from 'next/headers';
 
 export async function POST(request: NextRequest) {
   try {
@@ -34,6 +35,27 @@ export async function POST(request: NextRequest) {
         status: 400,
       });
     }
+
+    let sessionId;
+    if (isCreateSessionOkay.success) {
+      sessionId = isCreateSessionOkay.data?.sessionId;
+    }
+
+    const cookieStore = await cookies();
+
+    if (sessionId) {
+      cookieStore.set('sessionId', sessionId, {
+        httpOnly: true,
+        secure: true,
+        sameSite: 'strict',
+        path: '/',
+        maxAge: 60 * 60 * 24 * 7,
+      });
+    }
+
+    return Response.json({ success: true } as Handlers.Response, {
+      status: 200,
+    });
   } catch {
     return Response.json(
       {
@@ -50,5 +72,4 @@ export async function POST(request: NextRequest) {
       }
     );
   }
-  return Response.json({ success: true } as Handlers.Response, { status: 200 });
 }
