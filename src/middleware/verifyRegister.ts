@@ -5,7 +5,7 @@ import { Middleware } from '@types';
 export default async function verifyRegister(request: NextRequest) {
   const body = await request.json();
 
-  if (!body.email || !body.password || !body.confirm_password) {
+  if (!body.email || !body.password || !body.confirmPassword) {
     return NextResponse.json({
       success: false,
       error: {
@@ -38,7 +38,7 @@ export default async function verifyRegister(request: NextRequest) {
     } as Middleware.Response);
   }
 
-  if (body.password !== body.confirm_password) {
+  if (body.password !== body.confirmPassword) {
     return NextResponse.json({
       success: false,
       error: {
