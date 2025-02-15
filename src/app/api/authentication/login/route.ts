@@ -6,9 +6,9 @@ export async function POST(request: NextRequest) {
   try {
     const { email, password } = await request.json();
 
-    const isLoginOkay = verifyLogin({ email, password });
-    if (!isLoginOkay.success) {
-      return NextResponse.json(isLoginOkay, {
+    const isVerifyLoginOkay = verifyLogin({ email, password });
+    if (!isVerifyLoginOkay.success) {
+      return NextResponse.json(isVerifyLoginOkay, {
         status: 400,
       });
     }
